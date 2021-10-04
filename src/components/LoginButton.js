@@ -6,5 +6,5 @@ const LoginButton = () => {
 
   return <button onClick={() => loginWithRedirect()}>Log In</button>;
 };
-
+// login
 export default LoginButton;

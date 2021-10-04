@@ -6,7 +6,7 @@ import axios from "axios";
 
 class Event extends Component {
 
-    
+    // Event
 addBookHandler = () => {
 
     console.log(this.props.event)
