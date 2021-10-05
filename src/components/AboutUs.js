@@ -1,99 +1,250 @@
-'use strict';
-
-// $('.trigger').click(function() {
-//     $(this).parents('.page-about').toggleClass('show-info');
-//   });
+"use strict";
 
 import React from "react";
-import './AboutUs.css';
+import "./AboutUs.css";
 
-
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faInstagram,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
 
 class AboutUs extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      class: "page-about",
+      class1: "page-about",
+      class2: "page-about",
+      class3: "page-about",
+      class4: "page-about",
+    };
+  }
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            class: "page-about",
-            class1:"page-about",
-            class2:"page-about",
-            class3:"page-about",
-            class4:"page-about"
-        }
+  toggle = () => {
+    if (this.state.class == "page-about") {
+      this.setState({
+        class: "show-info",
+      });
     }
-
-    toggle = () => {
-        if (this.state.class == "page-about") {
-            this.setState({
-                class: "show-info"
-            })
-        }
-        if (this.state.class == "show-info") {
-            this.setState({
-                class: "page-about"
-            })
-        }
+    if (this.state.class == "show-info") {
+      this.setState({
+        class: "page-about",
+      });
     }
+  };
 
-    toggle1 = () => {
-        if (this.state.class1 == "page-about") {
-            this.setState({
-                class1: "show-info"
-            })
-        }
-        if (this.state.class == "show-info") {
-            this.setState({
-                class1: "page-about"
-            })
-        }
-
-
+  toggle1 = () => {
+    if (this.state.class1 == "page-about") {
+      this.setState({
+        class1: "show-info",
+      });
     }
+    if (this.state.class == "show-info") {
+      this.setState({
+        class1: "page-about",
+      });
+    }
+  };
 
-    render() {
-        return (
-            <>
-            <div className={this.state.class}>
-                <div className="left-side">
-                    <h3>leen</h3>
-                    <h4>Everything Web</h4>
-                    <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
+  toggle2 = () => {
+    if (this.state.class1 == "page-about") {
+      this.setState({
+        class1: "show-info",
+      });
+    }
+    if (this.state.class == "show-info") {
+      this.setState({
+        class2: "page-about",
+      });
+    }
+  };
 
-                    {/* <button className="trigger" onClick={this.toggle} >Info</button> */}
-                </div>
-                <div className="profile-photo">
-                </div>
-                <div className="right-side-info">
-                   
-                </div>
+  toggle3 = () => {
+    if (this.state.class1 == "page-about") {
+      this.setState({
+        class1: "show-info",
+      });
+    }
+    if (this.state.class == "show-info") {
+      this.setState({
+        class3: "page-about",
+      });
+    }
+  };
+
+  toggle4 = () => {
+    if (this.state.class1 == "page-about") {
+      this.setState({
+        class1: "show-info",
+      });
+    }
+    if (this.state.class == "show-info") {
+      this.setState({
+        class4: "page-about",
+      });
+    }
+  };
+
+  render() {
+    return (
+      <>
+        <div className={this.state.class}>
+          <div className="left-side">
+            <h3>leen</h3>
+            <h4> Full stack developer </h4>
+            <p> Graduated from LTUC-ASAC as a SoftWare Engineer </p>
+
+            <div class="social-container">
+              <a
+                href="https://web.facebook.com/leen.karaja.3"
+                className="facebook social"
+              >
+                <FontAwesomeIcon icon={faFacebook} size="2x" />
+              </a>
+              <a
+                href="https://github.com/leenahmad"
+                className="github social"
+              >
+                <FontAwesomeIcon icon={faGithub} size="2x" />
+              </a>
+              <a
+                href="https://www.instagram.com/leen.karaja/"
+                className="instagram social"
+              >
+                <FontAwesomeIcon icon={faInstagram} size="2x" />
+              </a>
             </div>
+          </div>
+          <div className="profile-photo"></div>
+          <div className="right-side-info"></div>
+        </div>
 
-            <div className={this.state.class1}>
-                <div className="left-side">
-                <h3>Omar Albarghuthi</h3>
-                    <h4>Everything Web</h4>
-                    <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
+        <div className={this.state.class1}>
+          <div className="left-side">
+            <h3>Omar</h3>
+            <h4>Full stack developer</h4>
+            <p> Graduated from LTUC-ASAC as a SoftWare Engineer </p>
 
-                    {/* <button className="trigger" onClick={this.toggle1} >Info</button> */}
-                </div>
-                <div className="profile-photo">
-                </div>
-                <div className="right-side-info">
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p>
-
-                    <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. </p>
-
-                    <p>Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Nam eget dui. Etiam rhoncus. </p>
-
-                    <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. </p>
-                </div>
+            <div class="social-container">
+              <a
+                href="https://www.facebook.com/omar.albargothi.3"
+                className="facebook social"
+              >
+                <FontAwesomeIcon icon={faFacebook} size="2x" />
+              </a>
+              <a
+                href="https://github.com/OmarAlbarghouthi"
+                className="github social"
+              >
+                <FontAwesomeIcon icon={faGithub} size="2x" />
+              </a>
+              <a
+                href="https://www.instagram.com/omar.albargothi.3/"
+                className="instagram social"
+              >
+                <FontAwesomeIcon icon={faInstagram} size="2x" />
+              </a>
             </div>
-            </>
-        )
-    }
+          </div>
+          <div className="profile-photo1"></div>
+          <div className="right-side-info"></div>
+        </div>
 
+        <div className={this.state.class2}>
+          <div className="left-side">
+            <h3>Hala</h3>
+            <h4>Full stack developer</h4>
+            <p> Graduated from LTUC-ASAC as a SoftWare Engineer</p>
+            <div class="social-container">
+              <a
+                href="https://www.facebook.com/learnbuildteach/"
+                className="facebook social"
+              >
+                <FontAwesomeIcon icon={faFacebook} size="2x" />
+              </a>
+              <a
+                href="https://www.twitter.com/jamesqquick"
+                className="github social"
+              >
+                <FontAwesomeIcon icon={faGithub} size="2x" />
+              </a>
+              <a
+                href="https://www.instagram.com/learnbuildteach"
+                className="instagram social"
+              >
+                <FontAwesomeIcon icon={faInstagram} size="2x" />
+              </a>
+            </div>
+          </div>
+          <div className="profile-photo2"></div>
+          <div className="right-side-info"></div>
+        </div>
 
+        <div className={this.state.class3}>
+          <div className="left-side">
+            <h3>zaid</h3>
+            <h4>Full stack developer</h4>
+            <p> Graduated from LTUC-ASAC as a SoftWare Engineer </p>
+
+            <div class="social-container">
+              <a
+                href="https://www.facebook.com/learnbuildteach/"
+                className="facebook social"
+              >
+                <FontAwesomeIcon icon={faFacebook} size="2x" />
+              </a>
+              <a
+                href="https://www.twitter.com/jamesqquick"
+                className="github social"
+              >
+                <FontAwesomeIcon icon={faGithub} size="2x" />
+              </a>
+              <a
+                href="https://www.instagram.com/learnbuildteach"
+                className="instagram social"
+              >
+                <FontAwesomeIcon icon={faInstagram} size="2x" />
+              </a>
+            </div>
+          </div>
+          <div className="profile-photo3"></div>
+          <div className="right-side-info"></div>
+        </div>
+
+        <div className={this.state.class4}>
+          <div className="left-side">
+            <h3>Bashar </h3>
+            <h4>Full stack developer</h4>
+            <p> Graduated from LTUC-ASAC as a SoftWare Engineer </p>
+            <div class="social-container">
+              <a
+                href="https://www.facebook.com/learnbuildteach/"
+                className="facebook social"
+              >
+                <FontAwesomeIcon icon={faFacebook} size="2x" />
+              </a>
+              <a
+                href="https://www.twitter.com/jamesqquick"
+                className="github social"
+              >
+                <FontAwesomeIcon icon={faGithub} size="2x" />
+              </a>
+              <a
+                href="https://www.instagram.com/learnbuildteach"
+                className="instagram social"
+              >
+                <FontAwesomeIcon icon={faInstagram} size="2x" />
+              </a>
+            </div>
+          </div>
+          <div className="profile-photo4"></div>
+          <div className="right-side-info"></div>
+        </div>
+      </>
+    );
+  }
 }
 
-export default AboutUs
+export default AboutUs;

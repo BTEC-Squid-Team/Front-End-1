@@ -7,8 +7,13 @@
     font-size: 0.875em;
     /* color: DimGray;
      */
-     color: black;
-     /* background-color: black; */
+     color: rgb(15, 14, 14);
+    
+   
+  }
+  .body{
+    background-image: url(https://images.unsplash.com/photo-1519873174361-37788c5a73c7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=341&q=80);
+    background-size: cover;
   }
   div {
     box-sizing: border-box;
@@ -26,21 +31,52 @@
     content: "More ";
   } */
   .page-about {
+    display: inline-block;
     position: relative;
     overflow: hidden;
-    width: 35%;
+    width: 35%; 
     /* min-width: 100px;
     max-width: 500px; */
     height: 400px;
     margin: 40px auto;
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     box-shadow: 1px 1px 20px 0 rgba(18, 241, 29, 0.1);
+    border-radius: 20%;
   }
+
+  .page-about:nth-child(2){
+    background-color: rgb(238, 226, 226);
+    margin-left: 150px;
+
+  }
+  .page-about:nth-child(3){
+    background-color: rgb(238, 226, 226);
+    margin-left: 200px;
+  }
+  .page-about:nth-child(4){
+    background-color: rgb(238, 226, 226);
+    margin-left: 150px;
+    
+
+  }
+
+  .page-about:nth-child(5){
+    background-color: rgb(238, 226, 226);
+    margin-left: 200px;
+
+  }
+
+  .page-about:nth-child(6){
+    background-color: rgb(238, 226, 226);
+    margin-left: 500px;
+
+  }
+
   .left-side {
     position:absolute;
     width: 50%;
     padding: 40px;
-    margin-top: 150px;
+    margin-top: 100px;
   }
   .profile-photo {
     position: absolute;
@@ -48,13 +84,69 @@
     left: 50%;
     width: 50px;
     height: 100px;
-    background-image: url("http://webmadewell.com/wp-content/uploads/2018/02/img-bg-about.jpg");
+    background-image: url("/home/leen/Front-End-1/src/img/leen.jpg");
     background-size:cover;
     background-size: 200px;
     background-position: center;
     background-repeat: no-repeat;
     /* animation: right_frame 2s ease-in-out 1 forwards; */
   }
+  .profile-photo1 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50px;
+    height: 100px;
+    background-image: url("/home/leen/Front-End-1/src/img/omer.jpg");
+    background-size:cover;
+    background-size: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: right_frame 2s ease-in-out 1 forwards;
+  }
+  .profile-photo2 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50px;
+    height: 100px;
+    background-image: url("/home/leen/Front-End-1/src/img/hala.jpg");
+    background-size:cover;
+    background-size: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: right_frame 2s ease-in-out 1 forwards;
+  }
+
+  .profile-photo3 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50px;
+    height: 100px;
+    background-image: url("/home/leen/Front-End-1/src/img/zaid.jpeg");
+    background-size:cover;
+    background-size: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: right_frame 2s ease-in-out 1 forwards;
+  }
+
+  .profile-photo4 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50px;
+    height: 100px;
+    background-image: url("/home/leen/Front-End-1/src/img/BASHAR.jpg");
+    background-size:cover;
+    background-size:cover;
+    background-size: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: right_frame 2s ease-in-out 1 forwards;
+  } 
+
   .right-side-info {
     position: relative;
     padding: 40px;
@@ -108,7 +200,7 @@
       left: 50%;
       width: 50%;
       height: 100%;
-      border-radius: 0;
+      border-radius: 50%;
     }
   }
   @keyframes left_frame {
@@ -124,7 +216,7 @@
       left: 0;
       width: 50%;
       height: 100%;
-      border-radius: 0;
+      border-radius: 50%;
     }
     100% {
       top: 40px;
@@ -134,4 +226,29 @@
       border-radius: 50%;
     }
   }
+  .social-container {
+    display: inline-block;
+    /* padding: 25px 50px; */
+  }
+
+  a.social {
+    margin: 0 1rem;
+    transition: transform 250ms;
+    /* display: inline-block; */
+  }
+
+  a.social:hover {
+    transform: translateY(-2px);
+  }
+
+  a.facebook {
+    color: #4968ad;
+  }
   
+  a.github {
+    color: #202020;
+  }
+  
+  a.instagram {
+    color: rgb(105, 14, 60);
+  }
