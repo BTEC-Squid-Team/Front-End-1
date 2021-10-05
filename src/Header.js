@@ -7,6 +7,7 @@ import { withAuth0 } from '@auth0/auth0-react';
 import LoginButton from './components/LoginButton';
 import LogoutButton from './components/LogoutButton';
 
+
 class Header extends React.Component {
   render() {
     const {  isAuthenticated } = this.props.auth0;
@@ -17,6 +18,7 @@ class Header extends React.Component {
         <Link to="/Home">Home</Link>
         <Link to="/BestEvents">My Events</Link>
         <Link to="/profile">Profile</Link>
+        <Link to="/AboutUs">About Us</Link>
         
         
         {isAuthenticated? <LogoutButton/> : <LoginButton/>}
