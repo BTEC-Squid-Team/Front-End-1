@@ -33,20 +33,21 @@ class MyFavoriteEvents extends React.Component {
     // console.log(eventData.data + "bashhar");
     // console.log(this.state.events[0].city + "dsjfsbsjbsjbj");
     // console.log(this.state.events + "sdfsfsdsdd");
-    
+
   }
-  
+
   deleteEvent = async (eventID) => {
     console.log('inside delete event');
     console.log(eventID);
-   axios.delete(`${process.env.REACT_APP_SERVER}/deleteHandler?eventID=${eventID}`).then((newEventData) => {
+    axios.delete(`${process.env.REACT_APP_SERVER}/deleteHandler?eventID=${eventID}`).then((newEventData) => {
       this.setState({
         events: newEventData.data
       })
     })
-
-
   }
+
+
+
   render() {
     return (
       <div>
@@ -61,7 +62,7 @@ class MyFavoriteEvents extends React.Component {
           this.state.events.map((event, idx) => {
             return (
               <DeleteAndShowEvent
-               event={event}
+                event={event}
                 idx={idx}
                 deleteEventFunc={this.deleteEvent}
               />

@@ -13,7 +13,6 @@ import BestEvents from './components/BestEvents';
 import Login from './Login';
 import Profile from './components/Profile';
 import Home from './components/Home';
-import CustomInput from './components/CustomInput';
 
 
 class App extends React.Component {
@@ -53,10 +52,6 @@ class App extends React.Component {
               
               <Route exact path="/BestEvents">
                   <BestEvents/>
-              </Route>
-              
-              <Route exact path="/CustomInput">
-                  <CustomInput/>
               </Route>
               
               

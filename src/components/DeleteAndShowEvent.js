@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 // import Row from "react-bootstrap/Row";
-import Comment from './Comment';
 
 class DeleteAndShowEvent extends Component {
 
@@ -30,7 +29,6 @@ class DeleteAndShowEvent extends Component {
                             <p>Type: {this.props.event.type}</p>
                         </Card.Text>
                         
-                        <Comment/>
                         <Button variant='link' href={this.props.event.url}>Buy this ticket</Button>
                         <Button variant='danger' onClick={this.deleteEventHandler}>Delete</Button>
 

@@ -17,7 +17,6 @@ class Header extends React.Component {
         <Link to="/Home">Home</Link>
         <Link to="/BestEvents">My Events</Link>
         <Link to="/profile">Profile</Link>
-        <Link to="/CustomInput">CustomInput</Link>
         
         
         {isAuthenticated? <LogoutButton/> : <LoginButton/>}
