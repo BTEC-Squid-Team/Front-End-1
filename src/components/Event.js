@@ -17,8 +17,17 @@ addBookHandler = () => {
 
     render() {
         return (
-            <div key={this.props.idx}>
-                <Card style={{ width: '18rem' }}>
+//             display: flex;
+// flex-wrap: wrap;
+// float:"left",padding:"10px",
+// style={{  display: "flex",flexWrap: "wrap"}}
+// flexDirection: "row" ,
+// display: "flex",flexWrap: "wrap",float:"left" ,padding:"10px"
+// style={{flex: 1}}
+// flex-direction: row | row-reverse | column | column-reverse;
+            <div key={this.props.idx}  style={{ display: 'flex', flexDirection: 'row',float:"left"}}>
+               
+                <Card style={{ width: '18rem',justifyContent: "center"  }} >
                     <Card.Img variant="top" src={this.props.event.image} />
                     <Card.Body>
                         <Card.Title>{this.props.event.short_title}</Card.Title>
