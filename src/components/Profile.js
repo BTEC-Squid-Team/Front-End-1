@@ -6,5 +6,5 @@ function Profile() {
 console.log(user);
   return <div>Hello {user.name}</div>;
 }
-//profile
+
 export default Profile;
