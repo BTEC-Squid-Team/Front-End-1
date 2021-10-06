@@ -5,6 +5,7 @@ import axios from 'axios';
 import Bio from './Bio';
 import AddBioForm from './AddBioForm';
 import UpdateBioForm from './UpdateBioForm';
+import "./ProfileStyle.css";
 class Profile extends React.Component {
 
 
@@ -87,9 +88,9 @@ class Profile extends React.Component {
   render() {
     return (
       <div>
-        <img src={this.props.auth0.user.picture} alt="img" />
-        <h1>{this.props.auth0.user.name} </h1>
-        <p>{this.props.auth0.user.email}</p>
+        <img src={this.props.auth0.user.picture} alt="img" id='profilePic'/>
+        <p class='userInfo' id='username'>{this.props.auth0.user.name} </p>
+        <p class='userInfo'id='email'>{this.props.auth0.user.email}</p>
 
         {/* <form onSubmit={this.getBio}>
           <label>Add your Bio here</label>

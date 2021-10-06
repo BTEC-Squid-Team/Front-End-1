@@ -10,11 +10,12 @@ class Bio extends Component {
 
     render() {
         return (
-            <div >
-            <Card>
+            <div id='updateForm'>
+            <Card id='cardBio'>
                 <Card.Body>{this.props.bio.bioData}</Card.Body>
-                <button onClick={()=>{this.props.showUpdateBioForm(this.props.bio)}}>Update</button>
+                
             </Card>
+            <button id='updataButton' onClick={()=>{this.props.showUpdateBioForm(this.props.bio)}}>Update</button>
             
             </div>
 
