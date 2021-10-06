@@ -3,6 +3,7 @@
 import React from "react";
 import "./AboutUs.css";
 
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -165,7 +166,7 @@ class AboutUs extends React.Component {
                 <FontAwesomeIcon icon={faFacebook} size="2x" />
               </a>
               <a
-                href="https://www.twitter.com/jamesqquick"
+                href="https://github.com/hala277"
                 className="github social"
               >
                 <FontAwesomeIcon icon={faGithub} size="2x" />
@@ -196,7 +197,7 @@ class AboutUs extends React.Component {
                 <FontAwesomeIcon icon={faFacebook} size="2x" />
               </a>
               <a
-                href="https://www.twitter.com/jamesqquick"
+                href="https://github.com/zaidShishani"
                 className="github social"
               >
                 <FontAwesomeIcon icon={faGithub} size="2x" />
@@ -226,7 +227,7 @@ class AboutUs extends React.Component {
                 <FontAwesomeIcon icon={faFacebook} size="2x" />
               </a>
               <a
-                href="https://www.twitter.com/jamesqquick"
+                href="https://github.com/Bashar-Owainat"
                 className="github social"
               >
                 <FontAwesomeIcon icon={faGithub} size="2x" />
