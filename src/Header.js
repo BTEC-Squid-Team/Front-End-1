@@ -6,23 +6,80 @@ import './Header.css';
 import { withAuth0 } from '@auth0/auth0-react';
 import LoginButton from './components/LoginButton';
 import LogoutButton from './components/LogoutButton';
+import styles from './mystyle.module.css'; 
+import logo from './img/logo.png'
+// import SlideShow from'./components/slideShow' 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
+import { faUserAlt } from '@fortawesome/free-solid-svg-icons'
+import { faListAlt } from '@fortawesome/free-solid-svg-icons'
+
+
+
+
+
+
+
 
 
 class Header extends React.Component {
+  
+
   render() {
+    
+
     const {  isAuthenticated } = this.props.auth0;
     return(
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand >My Favorite Events</Navbar.Brand>
+
+      < div className={styles.banner}>
+      
+      <div className={styles.header}>
+      <Navbar className={styles.navbar} collapseOnSelect >
+     
+        <Navbar.Brand className={styles.logo}>
+        <img src={logo} alt="Logo" />
+         
+          </Navbar.Brand>
+        <nav>
+         <div className={styles.nav}>
+        <Link className={styles.link} to="/Home">
+        <FontAwesomeIcon style ={{color:"#0d2489",margin: "0 .4rem"}} icon={faHome}/>
+        home
+          </Link>
+        <Link className={styles.link} to="/">
+        <FontAwesomeIcon style ={{color:"#0d2489",margin: "0 .4rem"}} icon={faListAlt}/>
+        my Events</Link>
+        <Link className={styles.link} to="/profile">
+        <FontAwesomeIcon style ={{color:"#0d2489",margin: "0 .4rem"}} icon={faUserAlt}/>
+        profile </Link>
+        </div>
+        <div className={styles.buttons}>
+        {/* TODO: if the user is logged in, render the `LogoutButton` - if the user is logged out, render the `LoginButton` */}
+
+      {/* <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar.Brand >My Favorite Events</Navbar.Brand> */}
         
-        <Link to="/Home">Home</Link>
-        <Link to="/BestEvents">My Events</Link>
-        <Link to="/profile">Profile</Link>
+       
         <Link to="/AboutUs">About Us</Link>
         
         
+
         {isAuthenticated? <LogoutButton/> : <LoginButton/>}
+       </div>
+      
+       </nav>
+
+       
       </Navbar>
+      </div> 
+     
+        
+             
+          </div>
+
+      
+     
+
     );
   }
 }
