@@ -43,9 +43,9 @@ class App extends React.Component {
               {/* TODO: add a route with a path of '/profile' that renders a `Profile` component */}
               <Route exact path="/profile">
 
-//               {isAuthenticated ?  <Profile /> : "not found "}
+               {isAuthenticated ?  <Profile /> : "not found "}
 
-                  {isAuthenticated ?  <Profile /> : "not found "}
+               
 
               </Route>
 

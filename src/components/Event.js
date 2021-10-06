@@ -42,12 +42,12 @@ class Event extends Component {
                        
                     </Card.Body>
 
-            <div key={this.props.idx}>
+            {/* <div key={this.props.idx}> */}
 
-
+{/* 
                 <Card style={{ width: '18rem' }}>
                     {/* <Row xs={1} md={4} class="g-4"> */}
-                        <Card.Img variant="top" src={this.props.event.image} />
+                        {/* <Card.Img variant="top" src={this.props.event.image} />
                         <Card.Body>
                             <Card.Title>{this.props.event.short_title}</Card.Title>
                             <Card.Text>
@@ -61,7 +61,7 @@ class Event extends Component {
                             <Button onClick={this.addBookHandler}>Add To My Events</Button>
 
                         </Card.Body>
-                    {/* </Row> */}
+                    </Row> */} 
 
                 </Card>
 

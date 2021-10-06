@@ -56,12 +56,10 @@ class Header extends React.Component {
         <div className={styles.buttons}>
         {/* TODO: if the user is logged in, render the `LogoutButton` - if the user is logged out, render the `LoginButton` */}
 
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand >My Favorite Events</Navbar.Brand>
+      {/* <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar.Brand >My Favorite Events</Navbar.Brand> */}
         
-        <Link to="/Home">Home</Link>
-        <Link to="/BestEvents">My Events</Link>
-        <Link to="/profile">Profile</Link>
+       
         <Link to="/AboutUs">About Us</Link>
         
         
