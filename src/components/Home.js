@@ -1,96 +1,126 @@
 import React from "react";
 import axios from "axios";
 import Event from "./Event";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+
+import SlideShow from "./slideShow";
+import Navbar from "react-bootstrap/Navbar";
+import styles from "../mystyle.module.css";
+
+import { withAuth0 } from "@auth0/auth0-react";
 
 class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cityName: "",
+      data: [],
+    };
+  }
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            cityName: '',
-            data: []
-        }
-    }
+  getEvent = async (e) => {
+    console.log(e);
+    e.preventDefault();
 
+    await this.setState({
+      cityName: e.target.city.value,
+    });
 
-    getEvent = async (e) => {
-        e.preventDefault();
+    let EventUrl = `${process.env.REACT_APP_SERVER}/event?city=${this.state.cityName}`;
+    let response = await axios.get(EventUrl);
+    console.log(response.data);
 
-        await this.setState({
-            cityName: e.target.city.value
-        })
+    this.setState({
+      data: response.data,
+    });
+  };
 
-        let EventUrl = `${process.env.REACT_APP_SERVER}/event?city=${this.state.cityName}`;
-        let response = await axios.get(EventUrl);
-        console.log(response.data);
-        this.setState({
-            data: response.data
+  addEvent = async (choosenEvent) => {
+    console.log("inside Add Event");
+    //  console.log(eventID);
+    // let choosenEvent = this.state.data.find(element => element.eventID === eventID)
 
-        })
-    }
+    console.log("teeeeeeest bash " + choosenEvent.image);
+    console.log("rrrrrrrrrrrr " + choosenEvent.short_title);
+    console.log("tttttttttttt " + choosenEvent.name);
+    console.log("qqqqqqqqqqqq " + choosenEvent.datetime_utc);
+    console.log("88888888888 " + choosenEvent.type);
+    console.log("4444444444 " + choosenEvent.url);
+    console.log("ccccccccc " + choosenEvent.city);
 
-    addEvent = async (choosenEvent) => {
-        console.log('inside Add Event');
-        //  console.log(eventID);
-        // let choosenEvent = this.state.data.find(element => element.eventID === eventID)
-        console.log("teeeeeeest bash "+choosenEvent.image)
-        console.log("rrrrrrrrrrrr "+choosenEvent.short_title)
-        console.log("tttttttttttt "+choosenEvent.name)
-        console.log("qqqqqqqqqqqq "+choosenEvent.datetime_utc)
-        console.log("88888888888 "+choosenEvent.type)
-        console.log("4444444444 "+choosenEvent.url)
-        console.log("ccccccccc "+choosenEvent.city)
+    console.log("eemailllll" + this.props.auth0.user.email);
+    let EventFromInfo = {
+      image: choosenEvent.image,
+      short_title: choosenEvent.short_title,
+      name: choosenEvent.name,
+      datetime_utc: choosenEvent.datetime_utc,
+      type: choosenEvent.type,
+      url: choosenEvent.url,
+      city: choosenEvent.city,
 
-         let EventFromInfo = {
-                    image: choosenEvent.image,
-                    short_title: choosenEvent.short_title,
-                    name: choosenEvent.name,
-                    datetime_utc: choosenEvent.datetime_utc,
-                    type:choosenEvent.type,
-                    url:choosenEvent.url,
-                    city:choosenEvent.city,
+      // eventID:eventID,
+      email: this.props.auth0.user.email,
+    };
 
-                    // eventID:eventID, 
-                    // email: this.props.auth0.user.email
-                }
-            
-                let newEventData = await axios.post(`${process.env.REACT_APP_SERVER}/addEvent`, EventFromInfo);
-                
-                this.setState({
-                    data: newEventData.data
-                })
-    }
+    let newEventData = await axios.post(
+      `${process.env.REACT_APP_SERVER}/addEvent`,
+      EventFromInfo
+    );
 
-    render() {
-        return (
-            <div>
-                <form onSubmit={this.getEvent}>
-                    <input type="text" name='city' />
-                    <input type="submit" value='Search!' />
-                </form>
+    this.setState({
+      data: newEventData.data,
+    });
+  };
 
-                {
-            this.state.data.map((event, idx)=>{
-              
-              return (
-               
-                <Event 
-                
-                event = {event}
-                idx={idx}
-                addEventFunc={this.addEvent}
+  render() {
+    return (
+      <div>
+        <SlideShow />
+
+        <div className={styles.wrap}>
+          <div className={styles.search}>
+            <Navbar className={styles.searchNav}>
+              <form onSubmit={this.getEvent} className="formtest">
+                <Form.Control
+                  className={styles.searchTerm}
+                  type="text"
+                  name="city"
+                  placeholder="city name"
+                  style={{ height: "30px", width: "100%" }}
                 />
-               
-                );
-                
-            })
-           
-            }
-            </div>
 
-        )
-    }
+                <Button
+                  className={styles.searchButton}
+                  variant="danger"
+                  type="submit"
+                >
+                  <FontAwesomeIcon className={styles.icons} icon={faSearch} />
+                </Button>
+              </form>
+            </Navbar>
+            <div />
+            <div />
+          </div>
+
+          <br></br>
+          <div
+            style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr" }}
+          >
+            {this.state.data.map((event, idx) => {
+              return (
+                <Event event={event} idx={idx} addEventFunc={this.addEvent} />
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
-export default Home;
+export default withAuth0(Home);

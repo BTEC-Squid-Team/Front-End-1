@@ -1,11 +1,90 @@
-# Start your own "Can of Books" App
+# Squid Events
 
-This repository has starter code to begin work on creating your own online bookshelf.
+### description of the project
 
-## What can books do?
+After the pandemic, we decided to create a website to provide you with the latest events around the user.
 
-Books are life-changing. They have the power to enlighten, educate, entertain, heal, and help us grow. Build out this code base to create an web app to track what books have impacted you, and what's recommended to read next.
+### Team members
 
-## Use this template
+Leader Leen
 
-Clone this repo to your own account with the green "Use this template" button. Then, add any collaborators. Now you are ready to start adding features! Deploy your site to let the world know which books have had the greatest impact on you, and what's recommended. Enjoy!
+Hala
+
+Zaid
+
+Omar
+
+Bashar
+
+Story one
+1-Title
+Login Page
+
+2-User Story sentence
+as a user I want to have a sign up / login page to that I can save my own data
+
+3-Feature Tasks
+create a login page using Ath0
+
+4-Acceptance Tests
+
+- trying to login using real accounts, the result should be accepting the account.
+- trying to login using fake accounts, the result should be rejecting the account.
+
+Story two
+1-Title
+My events page
+
+2-User Story sentence
+as a user I want to have a page called My Events that has all the events I want to attend
+
+3-Feature Tasks
+-create CRUD functions in the back-end
+
+- link the back-end with front-end
+
+4-Acceptance Tests
+
+- trying to add, remove, and update events, the result should be adding, removing and updating successfully.
+
+Story three
+1-Title
+Filter my events
+
+2-User Story sentence
+as a user I want to have the ability to filter my event based on its type
+
+3-Feature Tasks
+
+- Add a filter function
+4-Acceptance Tests
+- trying to filter the events based on their type, the result should be the same type as the user filtered
+
+Story four
+1-Title
+My profile
+
+2-User Story sentence
+as a user I want to have a profile page that contains my information
+
+3-Feature Tasks
+Add a profile page
+
+4-Acceptance Tests
+
+- make sure that the information is related to the current user who is using the website
+
+Story five
+1-Title
+Contact the website’s owners
+
+2-User Story sentence
+as a user I want to have the ability to contact with the owner of the website
+3-Feature Tasks
+Add a contact us page
+
+4-Acceptance Tests
+
+- checking if the emails provided in the contact us page are valid
+
+![image](https://user-images.githubusercontent.com/87301503/135726268-429ef386-c398-48b0-b78c-934d42d2b09b.png)
