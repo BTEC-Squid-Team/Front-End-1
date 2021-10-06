@@ -21,6 +21,7 @@ import { faListAlt } from '@fortawesome/free-solid-svg-icons'
 
 
 
+
 class Header extends React.Component {
   
 
@@ -29,6 +30,7 @@ class Header extends React.Component {
 
     const {  isAuthenticated } = this.props.auth0;
     return(
+
       < div className={styles.banner}>
       
       <div className={styles.header}>
@@ -53,6 +55,17 @@ class Header extends React.Component {
         </div>
         <div className={styles.buttons}>
         {/* TODO: if the user is logged in, render the `LogoutButton` - if the user is logged out, render the `LoginButton` */}
+
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar.Brand >My Favorite Events</Navbar.Brand>
+        
+        <Link to="/Home">Home</Link>
+        <Link to="/BestEvents">My Events</Link>
+        <Link to="/profile">Profile</Link>
+        <Link to="/AboutUs">About Us</Link>
+        
+        
+
         {isAuthenticated? <LogoutButton/> : <LoginButton/>}
        </div>
       

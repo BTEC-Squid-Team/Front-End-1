@@ -15,6 +15,7 @@ import {
 class Footer extends React.Component {
   render() {
     return(
+
       // collapseOnSelect expand="lg" bg="dark" variant="dark"
       <Navbar className={styles.navbarFooter}>
         <Navbar.Brand  > <p className={styles.footerLogo}><img src={logo} alt="Logo" /></p>
@@ -26,6 +27,10 @@ class Footer extends React.Component {
         </div>
        
         </Navbar.Brand>
+
+//       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+//         <Navbar.Brand>&copy; Best Books</Navbar.Brand>
+
       </Navbar>
     );
   }

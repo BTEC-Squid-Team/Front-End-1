@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import Event from "./Event";
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import Button from 'react-bootstrap/Button'
@@ -15,6 +16,9 @@ import styles from '../mystyle.module.css';
 
 
 
+
+import { withAuth0 } from '@auth0/auth0-react';
+
 class Home extends React.Component {
 
     constructor(props) {
@@ -23,9 +27,12 @@ class Home extends React.Component {
             cityName: '',
             data: [],
 
+
+
+          
+
         }
     }
-
 
 
 
@@ -42,42 +49,46 @@ class Home extends React.Component {
         let EventUrl = `${process.env.REACT_APP_SERVER}/event?city=${this.state.cityName}`;
         let response = await axios.get(EventUrl);
         console.log(response.data);
+        
         this.setState({
-            data: response.data
-
+            data: response.data,
+            
         })
     }
-
+    
     addEvent = async (choosenEvent) => {
         console.log('inside Add Event');
         //  console.log(eventID);
         // let choosenEvent = this.state.data.find(element => element.eventID === eventID)
-        console.log("teeeeeeest bash " + choosenEvent.image)
-        console.log("rrrrrrrrrrrr " + choosenEvent.short_title)
-        console.log("tttttttttttt " + choosenEvent.name)
-        console.log("qqqqqqqqqqqq " + choosenEvent.datetime_utc)
-        console.log("88888888888 " + choosenEvent.type)
-        console.log("4444444444 " + choosenEvent.url)
-        console.log("ccccccccc " + choosenEvent.city)
 
-        let EventFromInfo = {
-            image: choosenEvent.image,
-            short_title: choosenEvent.short_title,
-            name: choosenEvent.name,
-            datetime_utc: choosenEvent.datetime_utc,
-            type: choosenEvent.type,
-            url: choosenEvent.url,
-            city: choosenEvent.city,
+        console.log("teeeeeeest bash "+choosenEvent.image)
+        console.log("rrrrrrrrrrrr "+choosenEvent.short_title)
+        console.log("tttttttttttt "+choosenEvent.name)
+        console.log("qqqqqqqqqqqq "+choosenEvent.datetime_utc)
+        console.log("88888888888 "+choosenEvent.type)
+        console.log("4444444444 "+choosenEvent.url)
+        console.log("ccccccccc "+choosenEvent.city)
+       
+       console.log("eemailllll"+ this.props.auth0.user.email)
+         let EventFromInfo = {
+                    image: choosenEvent.image,
+                    short_title: choosenEvent.short_title,
+                    name: choosenEvent.name,
+                    datetime_utc: choosenEvent.datetime_utc,
+                    type:choosenEvent.type,
+                    url:choosenEvent.url,
+                    city:choosenEvent.city,
 
-            // eventID:eventID, 
-            // email: this.props.auth0.user.email
-        }
+                    // eventID:eventID, 
+                     email: this.props.auth0.user.email
+                }
+            
+                let newEventData = await axios.post(`${process.env.REACT_APP_SERVER}/addEvent`, EventFromInfo);
+                
+                this.setState({
+                    data: newEventData.data
+                })
 
-        let newEventData = await axios.post(`${process.env.REACT_APP_SERVER}/addEvent`, EventFromInfo);
-
-        this.setState({
-            data: newEventData.data
-        })
     }
 
     render() {
@@ -139,4 +150,4 @@ class Home extends React.Component {
     }
 }
 
-export default Home;
+export default withAuth0(Home);
