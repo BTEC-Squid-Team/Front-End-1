@@ -7,7 +7,9 @@ const LogoutButton = () => {
   const { logout } = useAuth0();
 
   return (
-    <Button onClick={() => logout({ returnTo: window.location.origin })} variant="outline-light">
+    // variant="outline-light"
+    <Button onClick={() => logout({ returnTo: window.location.origin })} variant="outline-danger">
+     
       <FontAwesomeIcon icon={faSignOutAlt}/> Log-Out
     </Button>
   );

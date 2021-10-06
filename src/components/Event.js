@@ -3,6 +3,8 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
+import styles from '../mystyle.module.css';
+
 
 class Event extends Component {
 
@@ -25,12 +27,13 @@ addBookHandler = () => {
 // display: "flex",flexWrap: "wrap",float:"left" ,padding:"10px"
 // style={{flex: 1}}
 // flex-direction: row | row-reverse | column | column-reverse;
-            <div key={this.props.idx}  style={{ display: 'flex', flexDirection: 'row',float:"left"}}>
-               
-                <Card style={{ width: '18rem',justifyContent: "center"  }} >
+// style={{ display: 'flex', flexDirection: 'row',float:"left"}}
+            <div key={this.props.idx} >
+               {/* style={{ width: '18rem',justifyContent: "center" ,marginBottom:"1rem" }} */}
+                <Card  className={styles.cardsStyle} style={{ width: '18rem',justifyContent: "center" ,marginBottom:"1rem" }} >
                     <Card.Img variant="top" src={this.props.event.image} />
-                    <Card.Body>
-                        <Card.Title>{this.props.event.short_title}</Card.Title>
+                    <Card.Body >
+                        <Card.Title style={{height:"3rem"}}>{this.props.event.short_title}</Card.Title>
                         <Card.Text>
                         <p>City: {this.props.event.city}</p>
                         <p>Place: {this.props.event.name}</p>
@@ -38,8 +41,8 @@ addBookHandler = () => {
                         <p>Type: {this.props.event.type}</p>
                         
                         </Card.Text>
-                        <Button variant='link' href={this.props.event.url}>Buy this ticket</Button>
-                        <Button onClick={this.addBookHandler}>Add To My Events</Button>
+                        <Button  variant='link' href={this.props.event.url} style={{color:"#db4f5c"}}>Buy this ticket</Button>
+                        <Button  variant="danger" onClick={this.addBookHandler}>Add To My Events</Button>
                        
                     </Card.Body>
                 </Card>

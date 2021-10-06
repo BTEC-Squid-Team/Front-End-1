@@ -21,11 +21,13 @@
       align-items: center;
       justify-content: space-between;
       padding: 2rem 9%;
+      /* background-color: rgb(0, 0, 0); */
+      background:#fff;
      
   }
 
 .buttons{
-    margin-left: 750px;
+    margin-left: 860px;
     position: relative;
     bottom: 160px;
 }
@@ -35,18 +37,24 @@
    color:#fff;
    
 } */
-
-/* .logo img{
-    height: 40px;
-    width: 150px;
-} */
+ 
+.logo img{
+    height: 45px;
+    width: 110px;
+    position: relative;
+    bottom: 80px;
+    right: 90px;
+    
+} 
  
 .header .logo h1{
 position: relative;
 right: 100px;
 font-size: 1.2rem;
 font-weight: bolder;
-color: #fff;
+/* color: #fff; */
+color: #040f3d;
+
 text-transform: uppercase;
 margin-bottom: 170px;
 /* background-color: black; */
@@ -55,19 +63,19 @@ margin-bottom: 170px;
 
 }
 .header .logo span{
-    color:var(--pink);
+    color:var(--danger);
 }
 
 .header .navbar a {
-color: #fff;
+  color: #040f3d;
 font-size: 1.1rem;
-margin: 0 .8rem;
+margin: 0 .4rem;
 
 /* margin-top: 1rem; */
 }
  .nav{
     position: relative;
-    left: 450px;
+    left: 550px;
     margin-bottom: 130px;
 }
 
@@ -77,5 +85,92 @@ margin: 0 .8rem;
   top: 0;
  
   
+}
+
+.navbarFooter{
+  background-color:rgb(204, 200, 200);
+  height: 60px;
+  position: relative;
+  top: 300px; 
+}
+.brand{
+  position: relative;
+  color: #040f3d;
+   top: 15px; 
+  
+}
+.footerLogo img{
+  height: 45px;
+  width: 110px;
+  position: relative;
+  left: 20px;
+  top:22px;
+}
+
+
+
+.searchTerm {
+  width: 50%;
+  
+  position: relative;
+  border-right: none;
+  padding: 5px;
+ 
+  border-radius: 5px 0 0 5px;
+  outline: none;
+ 
+  top:18px;
+ 
+  bottom: 12px;
+}
+
+
+.searchTerm{
+  position: relative;
+  left:100px;
+  /* bottom: 100px;  */
+}
+.searchButton { 
+ 
+  
+  text-align: center;
+ 
+  cursor: pointer;
+  font-size: 20px;
+ 
+}
+.searchNav{
+  background-color:#040f3d;
+  width:40%;
+  position: relative;
+  left: 400px;
+  height: 50px;
+  top: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.searchButton{
+  position: relative;
+  left: 310px;
+   bottom: 12px; 
+   width:48px;
+   height:30px;
+ 
+ 
+}
+.icons{
+  position: relative;
+  bottom: 7px;
+}
+.cardsStyle{
+ 
+  
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+ 
+}
+.footericon{
+  display: inline;
+  position: relative;
+  left:1100px;
+  bottom:25px;
 }
 

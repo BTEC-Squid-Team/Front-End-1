@@ -6,7 +6,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
-import styles from './Homestyle.css'; 
+// import styles from './Homestyle.css';
+import SlideShow from './slideShow'
+import Navbar from 'react-bootstrap/Navbar'
+import styles from '../mystyle.module.css';
+
+
+
 
 
 class Home extends React.Component {
@@ -15,9 +21,14 @@ class Home extends React.Component {
         super(props);
         this.state = {
             cityName: '',
-            data: []
+            data: [],
+
         }
     }
+
+
+
+
 
 
     getEvent = async (e) => {
@@ -72,32 +83,56 @@ class Home extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.getEvent} className={styles.formtest}>
-                    <Form.Control type="text" name='city' placeholder="city name" style={{ width: "80%" }} />
-                    <Button type="submit" style={{ position: "relative",left: "1020px" , bottom:"38px"}}>
-                    {/* position: "fixed", */}
-                        <FontAwesomeIcon icon={faSearch} />
-                    </Button>
+            <SlideShow />
+               
+
+                <div className={styles.wrap} >
+                    <div className={styles.search}>
                    
-                </form>
+                        <Navbar  className={styles.searchNav}  >
+                            <form onSubmit={this.getEvent} className="formtest">
+                                {/* <Navbar  bg="dark" variant="dark" > */}
+                                <Form.Control className={styles.searchTerm} type="text" name='city' placeholder="city name" style={{ height: "30px", width: "100%" }} />
+                                {/* style={{ width: "100%" }} */}
+                                {/* position: "relative",bottom:"540px",left:"200px" */}
+                                <Button className={styles.searchButton} variant="danger" type="submit">
+                                    {/* style={{ position: "relative", left: "220px", bottom: "38px" }} */}
+                                    {/* position: "fixed", */}
+                                    <FontAwesomeIcon className={styles.icons} icon={faSearch} />
+                                </Button>
+                                {/* </Navbar > */}
+                            </form>
+                        </Navbar >
+                        <div />
+                        <div />
 
-                {
-                    this.state.data.map((event, idx) => {
+                       
+                    </div>
+                    
+                    <br></br>
+                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr" }}>
+                        {
+                            this.state.data.map((event, idx) => {
 
-                        return (
+                                return (
 
-                            <Event
+                                    <Event
 
-                                event={event}
-                                idx={idx}
-                                addEventFunc={this.addEvent}
-                            />
+                                        event={event}
+                                        idx={idx}
+                                        addEventFunc={this.addEvent}
+                                    />
 
-                        );
+                                );
 
-                    })
+                            })
 
-                }
+                        }
+                    </div>
+
+                   
+                    
+                </div>
             </div>
 
         )

@@ -7,7 +7,7 @@ import { faSignInAlt } from '@fortawesome/free-solid-svg-icons'
 const LoginButton = () => {
   const { loginWithRedirect } = useAuth0();
 
-  return <Button onClick={() => loginWithRedirect()} variant="outline-light">
+  return <Button onClick={() => loginWithRedirect()} variant="outline-danger">
      <FontAwesomeIcon icon={faSignInAlt}/> Log-In</Button>;
 };
 
