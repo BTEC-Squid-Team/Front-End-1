@@ -10,5 +10,5 @@ const LoginButton = () => {
   return <Button onClick={() => loginWithRedirect()} variant="outline-danger">
      <FontAwesomeIcon icon={faSignInAlt}/> Log-In</Button>;
 };
-// login
+
 export default LoginButton;
