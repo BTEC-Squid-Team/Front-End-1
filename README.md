@@ -87,4 +87,15 @@ Add a contact us page
 
 - checking if the emails provided in the contact us page are valid
 
-![image](https://user-images.githubusercontent.com/87301503/135726268-429ef386-c398-48b0-b78c-934d42d2b09b.png)
+
+![Home page](https://user-images.githubusercontent.com/75664971/137101385-3b1cf9f1-c3fe-41b1-b80d-bb926d544b93.png)
+![My F Events](https://user-images.githubusercontent.com/75664971/137101412-36609001-9ecc-41af-b7ed-e4cd340e5a25.png)
+![Profile](https://user-images.githubusercontent.com/75664971/137101443-f5fea3ea-28cc-43bb-a188-38ef4920ed81.png)
+![About Us](https://user-images.githubusercontent.com/75664971/137101483-21de26f0-a9bd-4e68-80b6-0c019fc8c6cf.png)
+
+
+
+
+
+
+
